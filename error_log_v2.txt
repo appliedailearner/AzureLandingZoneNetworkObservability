@@ -1,0 +1,207 @@
+random_id.sa: Refreshing state... [id=fgXpjw]
+module.onprem_simulation.azurerm_resource_group.onprem: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-onprem-sim-uks]
+azurerm_resource_group.hub: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks]
+module.onprem_simulation.azurerm_virtual_network.onprem: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-onprem-sim-uks/providers/Microsoft.Network/virtualNetworks/vnet-onprem-uks]
+module.security.azurerm_firewall_policy.main: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/firewallPolicies/afwp-uks-premium]
+module.spoke2.azurerm_network_security_group.spoke: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-spoke2-uks]
+module.spoke2.azurerm_virtual_network.spoke: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke2-uks]
+module.spoke1.azurerm_network_security_group.spoke: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/networkSecurityGroups/nsg-vnet-spoke1-uks]
+module.observability.azurerm_log_analytics_workspace.main: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.OperationalInsights/workspaces/law-net-obs-uks-7e05e98f]
+module.security.azurerm_public_ip.fw: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/publicIPAddresses/pip-fw-uks]
+module.security.azurerm_public_ip.agw: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/publicIPAddresses/pip-agw-uks-7e05e98f]
+module.networking.azurerm_network_security_group.waf: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/networkSecurityGroups/nsg-agw-uks]
+module.observability.azurerm_storage_account.flowlogs: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Storage/storageAccounts/stflowlogs7e05e98f]
+module.networking.azurerm_virtual_network.hub: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks]
+module.spoke1.azurerm_virtual_network.spoke: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke1-uks]
+module.observability.azurerm_network_watcher.main: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/networkWatchers/nw-uks]
+module.workload_webapp_spoke2.azurerm_service_plan.app: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Web/serverFarms/asp-app-spoke2-obs-7e05e98f]
+module.security.azurerm_firewall_policy_rule_collection_group.main: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/firewallPolicies/afwp-uks-premium/ruleCollectionGroups/fp-rcg-main]
+module.onprem_simulation.azurerm_subnet.server: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-onprem-sim-uks/providers/Microsoft.Network/virtualNetworks/vnet-onprem-uks/subnets/ServerSubnet]
+module.spoke2.azurerm_subnet.workload: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke2-uks/subnets/snet-workload]
+module.workload_webapp_spoke2.azurerm_linux_web_app.app: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Web/sites/app-spoke2-obs-7e05e98f]
+module.spoke1.azurerm_subnet.workload: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke1-uks/subnets/snet-workload]
+module.networking.azurerm_subnet.gateway: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/subnets/GatewaySubnet]
+module.networking.azurerm_subnet.waf: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/subnets/snet-agw-uks]
+module.networking.azurerm_subnet.firewall: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/subnets/AzureFirewallSubnet]
+azurerm_virtual_network_peering.hub_to_spoke1: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/virtualNetworkPeerings/peer-hub-to-spoke1]
+azurerm_virtual_network_peering.spoke1_to_hub: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke1-uks/virtualNetworkPeerings/peer-spoke1-to-hub]
+azurerm_virtual_network_peering.hub_to_onprem: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/virtualNetworkPeerings/peer-hub-to-onprem]
+azurerm_virtual_network_peering.spoke2_to_hub: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke2-uks/virtualNetworkPeerings/peer-spoke2-to-hub]
+azurerm_virtual_network_peering.hub_to_spoke2: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/virtualNetworkPeerings/peer-hub-to-spoke2]
+azurerm_virtual_network_peering.onprem_to_hub: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-onprem-sim-uks/providers/Microsoft.Network/virtualNetworks/vnet-onprem-uks/virtualNetworkPeerings/peer-onprem-to-hub]
+module.spoke2.azurerm_subnet_network_security_group_association.spoke: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke2-uks/subnets/snet-workload]
+module.spoke1.azurerm_subnet_network_security_group_association.spoke: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke1-uks/subnets/snet-workload]
+module.networking.azurerm_subnet_network_security_group_association.waf: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/subnets/snet-agw-uks]
+module.workload_vm_spoke1.azurerm_network_interface.vm: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/networkInterfaces/nic-vm-spoke1]
+module.security.azurerm_firewall.main: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/azureFirewalls/afw-uks-premium]
+module.workload_vm_spoke1.azurerm_windows_virtual_machine.vm: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Compute/virtualMachines/vm-spoke1]
+module.security.azurerm_monitor_diagnostic_setting.fw: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/azureFirewalls/afw-uks-premium|diag-fw-to-law]
+module.workload_vm_spoke1.azurerm_virtual_machine_extension.custom_script: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Compute/virtualMachines/vm-spoke1/extensions/install-iis]
+module.workload_vm_spoke1.azurerm_virtual_machine_extension.nw_agent: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Compute/virtualMachines/vm-spoke1/extensions/NetworkWatcherAgentWindows]
+module.observability.azurerm_network_connection_monitor.cm: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/networkWatchers/nw-uks/connectionMonitors/cm-connectivity-test]
+module.workload_webapp_spoke2.azurerm_app_service_virtual_network_swift_connection.vnet_integration: Refreshing state... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Web/sites/app-spoke2-obs-7e05e98f/config/virtualNetwork]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # module.security.azurerm_application_gateway.main will be created
+  + resource "azurerm_application_gateway" "main" {
+      + id                          = (known after apply)
+      + location                    = "uksouth"
+      + name                        = "agw-uks-waf-7e05e98f"
+      + private_endpoint_connection = (known after apply)
+      + resource_group_name         = "rg-net-observability-uks"
+
+      + backend_address_pool {
+          + fqdns        = []
+          + id           = (known after apply)
+          + ip_addresses = []
+          + name         = "my-backend-pool"
+        }
+
+      + backend_http_settings {
+          + cookie_based_affinity               = "Disabled"
+          + id                                  = (known after apply)
+          + name                                = "my-http-settings"
+          + path                                = "/path1/"
+          + pick_host_name_from_backend_address = false
+          + port                                = 80
+          + probe_id                            = (known after apply)
+          + protocol                            = "Http"
+          + request_timeout                     = 60
+          + trusted_root_certificate_names      = []
+            # (3 unchanged attributes hidden)
+        }
+
+      + frontend_ip_configuration {
+          + id                            = (known after apply)
+          + name                          = "my-frontend-ip-configuration"
+          + private_ip_address            = (known after apply)
+          + private_ip_address_allocation = "Dynamic"
+          + private_link_configuration_id = (known after apply)
+          + public_ip_address_id          = "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/publicIPAddresses/pip-agw-uks-7e05e98f"
+        }
+
+      + frontend_port {
+          + id   = (known after apply)
+          + name = "port_80"
+          + port = 80
+        }
+
+      + gateway_ip_configuration {
+          + id        = (known after apply)
+          + name      = "my-gateway-ip-configuration"
+          + subnet_id = "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-hub-uks/subnets/snet-agw-uks"
+        }
+
+      + http_listener {
+          + frontend_ip_configuration_id   = (known after apply)
+          + frontend_ip_configuration_name = "my-frontend-ip-configuration"
+          + frontend_port_id               = (known after apply)
+          + frontend_port_name             = "port_80"
+          + host_names                     = []
+          + id                             = (known after apply)
+          + name                           = "my-listener"
+          + protocol                       = "Http"
+          + ssl_certificate_id             = (known after apply)
+          + ssl_profile_id                 = (known after apply)
+            # (4 unchanged attributes hidden)
+        }
+
+      + request_routing_rule {
+          + backend_address_pool_id     = (known after apply)
+          + backend_address_pool_name   = "my-backend-pool"
+          + backend_http_settings_id    = (known after apply)
+          + backend_http_settings_name  = "my-http-settings"
+          + http_listener_id            = (known after apply)
+          + http_listener_name          = "my-listener"
+          + id                          = (known after apply)
+          + name                        = "my-routing-rule"
+          + priority                    = 1
+          + redirect_configuration_id   = (known after apply)
+          + rewrite_rule_set_id         = (known after apply)
+          + rule_type                   = "Basic"
+          + url_path_map_id             = (known after apply)
+            # (3 unchanged attributes hidden)
+        }
+
+      + sku {
+          + capacity = 1
+          + name     = "WAF_v2"
+          + tier     = "WAF_v2"
+        }
+
+      + ssl_policy {
+          + policy_name = "AppGwSslPolicy20220101"
+          + policy_type = "Predefined"
+        }
+
+      + waf_configuration {
+          + enabled                  = true
+          + file_upload_limit_mb     = 100
+          + firewall_mode            = "Prevention"
+          + max_request_body_size_kb = 128
+          + request_body_check       = true
+          + rule_set_type            = "OWASP"
+          + rule_set_version         = "3.2"
+        }
+    }
+
+  # module.security.azurerm_monitor_diagnostic_setting.fw will be updated in-place
+  ~ resource "azurerm_monitor_diagnostic_setting" "fw" {
+        id                             = "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/azureFirewalls/afw-uks-premium|diag-fw-to-law"
+      ~ log_analytics_workspace_id     = "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.OperationalInsights/workspaces/law-net-observability-uks" -> "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.OperationalInsights/workspaces/law-net-obs-uks-7e05e98f"
+        name                           = "diag-fw-to-law"
+        # (4 unchanged attributes hidden)
+
+        # (19 unchanged blocks hidden)
+    }
+
+  # module.workload_vm_spoke1.azurerm_windows_virtual_machine.vm will be updated in-place
+  ~ resource "azurerm_windows_virtual_machine" "vm" {
+        id                                                     = "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Compute/virtualMachines/vm-spoke1"
+        name                                                   = "vm-spoke1"
+        tags                                                   = {}
+      ~ vm_agent_platform_updates_enabled                      = true -> false
+        # (41 unchanged attributes hidden)
+
+        # (2 unchanged blocks hidden)
+    }
+
+  # module.workload_webapp_spoke2.azurerm_linux_web_app.app will be updated in-place
+  ~ resource "azurerm_linux_web_app" "app" {
+        id                                             = "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Web/sites/app-spoke2-obs-7e05e98f"
+        name                                           = "app-spoke2-obs-7e05e98f"
+        tags                                           = {}
+      - virtual_network_subnet_id                      = "/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/virtualNetworks/vnet-spoke2-uks/subnets/snet-workload" -> null
+        # (24 unchanged attributes hidden)
+
+        # (1 unchanged block hidden)
+    }
+
+Plan: 1 to add, 3 to change, 0 to destroy.
+module.workload_vm_spoke1.azurerm_windows_virtual_machine.vm: Modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Compute/virtualMachines/vm-spoke1]
+module.workload_webapp_spoke2.azurerm_linux_web_app.app: Modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Web/sites/app-spoke2-obs-7e05e98f]
+module.security.azurerm_application_gateway.main: Creating...
+module.security.azurerm_monitor_diagnostic_setting.fw: Modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/azureFirewalls/afw-uks-premium|diag-fw-to-law]
+module.security.azurerm_monitor_diagnostic_setting.fw: Modifications complete after 6s [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Network/azureFirewalls/afw-uks-premium|diag-fw-to-law]
+module.workload_vm_spoke1.azurerm_windows_virtual_machine.vm: Still modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-...soft.Compute/virtualMachines/vm-spoke1, 00m10s elapsed]
+module.workload_webapp_spoke2.azurerm_linux_web_app.app: Still modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-...soft.Web/sites/app-spoke2-obs-7e05e98f, 00m10s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [00m10s elapsed]
+module.workload_vm_spoke1.azurerm_windows_virtual_machine.vm: Modifications complete after 18s [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Compute/virtualMachines/vm-spoke1]
+module.workload_webapp_spoke2.azurerm_linux_web_app.app: Still modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-...soft.Web/sites/app-spoke2-obs-7e05e98f, 00m20s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [00m20s elapsed]
+module.workload_webapp_spoke2.azurerm_linux_web_app.app: Still modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-...soft.Web/sites/app-spoke2-obs-7e05e98f, 00m30s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [00m30s elapsed]
+module.workload_webapp_spoke2.azurerm_linux_web_app.app: Still modifying... [id=/subscriptions/87cf2b93-5e52-4533-9e6b-...soft.Web/sites/app-spoke2-obs-7e05e98f, 00m40s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [00m40s elapsed]
+module.workload_webapp_spoke2.azurerm_linux_web_app.app: Modifications complete after 47s [id=/subscriptions/87cf2b93-5e52-4533-9e6b-7182cd7dbde6/resourceGroups/rg-net-observability-uks/providers/Microsoft.Web/sites/app-spoke2-obs-7e05e98f]
+module.security.azurerm_application_gateway.main: Still creating... [00m50s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [01m00s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [01m10s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [01m20s elapsed]
+module.security.azurerm_application_gateway.main: Still creating... [01m30s elapsed]

@@ -1,5 +1,5 @@
 resource "azurerm_public_ip" "fw" {
-  name                = "pip-fw-uks"
+  name                = "pip-fw-uks" # REVERT: Avoid lock conflict since it is already working
   location            = var.location
   resource_group_name = var.resource_group_name
   allocation_method   = "Static"
@@ -7,7 +7,7 @@ resource "azurerm_public_ip" "fw" {
 }
 
 resource "azurerm_public_ip" "agw" {
-  name                = "pip-agw-uks"
+  name                = "pip-agw-uks-${var.unique_id}"
   location            = var.location
   resource_group_name = var.resource_group_name
   allocation_method   = "Static"
@@ -49,7 +49,7 @@ resource "azurerm_firewall" "main" {
 # -------------------------------------------------------------------------
 
 resource "azurerm_application_gateway" "main" {
-  name                = "agw-uks-waf"
+  name                = "agw-uks-waf-${var.unique_id}"
   resource_group_name = var.resource_group_name
   location            = var.location
 
@@ -75,16 +75,19 @@ resource "azurerm_application_gateway" "main" {
   }
 
   backend_address_pool {
-    name = "my-backend-pool"
+    name         = "my-backend-pool"
+    ip_addresses = var.backend_ips
+    fqdns        = var.backend_fqdns
   }
 
   backend_http_settings {
-    name                  = "my-http-settings"
-    cookie_based_affinity = "Disabled"
-    path                  = "/path1/"
-    port                  = 80
-    protocol              = "Http"
-    request_timeout       = 60
+    name                                = "my-http-settings"
+    cookie_based_affinity               = "Disabled"
+    path                                = "/"
+    port                                = 80
+    protocol                            = "Http"
+    request_timeout                     = 60
+    pick_host_name_from_backend_address = true
   }
 
   http_listener {
@@ -103,11 +106,70 @@ resource "azurerm_application_gateway" "main" {
     priority                   = 1
   }
 
+  ssl_policy {
+    policy_type = "Predefined"
+    policy_name = "AppGwSslPolicy20220101" # Modern TLS 1.2+ Standard
+  }
+
   waf_configuration {
     enabled          = true
     firewall_mode    = "Prevention"
     rule_set_type    = "OWASP"
     rule_set_version = "3.2"
+  }
+}
+
+# -------------------------------------------------------------------------
+# Firewall Policy Rules
+# -------------------------------------------------------------------------
+
+resource "azurerm_firewall_policy_rule_collection_group" "main" {
+  name               = "fp-rcg-main"
+  firewall_policy_id = azurerm_firewall_policy.main.id
+  priority           = 100
+
+  application_rule_collection {
+    name     = "app-rules"
+    priority = 200
+    action   = "Allow"
+    rule {
+      name = "allow-google-dns-check"
+      protocols {
+        type = "Https"
+        port = 443
+      }
+      source_addresses  = ["*"]
+      destination_fqdns = ["www.google.com"]
+    }
+    rule {
+      name = "allow-msft-updates"
+      protocols {
+        type = "Https"
+        port = 443
+      }
+      source_addresses  = ["*"]
+      destination_fqdns = ["*.microsoft.com", "*.windowsupdate.com"]
+    }
+  }
+
+  network_rule_collection {
+    name     = "net-rules"
+    priority = 100
+    action   = "Allow"
+    rule {
+      name                  = "allow-dns"
+      protocols             = ["UDP"]
+      source_addresses      = ["*"]
+      destination_addresses = ["8.8.8.8", "8.8.4.4"]
+      destination_ports     = ["53"]
+    }
+    rule {
+      name                  = "allow-icmp"
+      protocols             = ["ICMP"]
+      source_addresses      = ["*"]
+      destination_addresses = ["*"]
+      destination_ports     = ["*"]
+    }
   }
 }
 

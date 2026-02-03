@@ -35,8 +35,20 @@ resource "azurerm_network_security_group" "waf" {
   resource_group_name = var.resource_group_name
 
   security_rule {
-    name                       = "AllowAnyHTTPInbound"
+    name                       = "AllowGatewayManagerInbound"
     priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "65200-65535"
+    source_address_prefix      = "GatewayManager"
+    destination_address_prefix = "*"
+  }
+
+  security_rule {
+    name                       = "AllowHTTPInbound"
+    priority                   = 200
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"

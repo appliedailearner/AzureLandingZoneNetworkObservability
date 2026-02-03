@@ -1,5 +1,5 @@
 resource "azurerm_log_analytics_workspace" "main" {
-  name                = "law-net-observability-uks"
+  name                = "law-net-obs-uks-${var.unique_id}"
   location            = var.location
   resource_group_name = var.resource_group_name
   sku                 = "PerGB2018"
@@ -12,21 +12,15 @@ resource "azurerm_network_watcher" "main" {
   resource_group_name = var.resource_group_name
 }
 
-# -------------------------------------------------------------------------
-# Storage Account for Flow Logs
-# -------------------------------------------------------------------------
-resource "random_id" "sa" {
-  byte_length = 4
-}
-
 resource "azurerm_storage_account" "flowlogs" {
-  name                     = "stflowlogs${random_id.sa.hex}"
+  name                     = "stflowlogs${var.unique_id}"
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
+/*
 # -------------------------------------------------------------------------
 # NSG Flow Logs (The Camera)
 # -------------------------------------------------------------------------
@@ -52,6 +46,7 @@ resource "azurerm_network_watcher_flow_log" "waf" {
     interval_in_minutes   = 10
   }
 }
+*/
 
 # -------------------------------------------------------------------------
 # Connection Monitor
