@@ -52,10 +52,10 @@ The architecture follows a vertical logic designed for regulatory compliance and
 
 Beyond architecture, this lab provides visual proof of network health and security status.
 
-#### 1. Traffic Analytics (The Global View)
-Visualization of all VNet and NSG flows, identifying potential malicious traffic and validating that East-West traffic is indeed being inspected.
+#### 1. VNet Flow Logs & Traffic Analytics
+Visualization of all VNet and NSG flows, identifying potential malicious traffic and validating that East-West traffic is indeed being inspected. We specifically use **VNet Flow Logs** to capture encryption status and ensure 100% configuration coverage.
 
-<img src="assets/images/traffic-analytics.png" width="800" alt="Azure Traffic Analytics Dashboard">
+<img src="assets/images/traffic-analytics.png" width="800" alt="Azure Traffic Analytics Dashboard featuring VNet Flow Logs">
 
 #### 2. Connection Monitor (The Pulse)
 Continuous, 24/7 validation of critical network paths (e.g., Spoke VM to Internet, or Spoke-to-Spoke) with real-time latency and availability metrics.
