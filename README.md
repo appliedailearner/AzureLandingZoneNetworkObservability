@@ -8,7 +8,7 @@ This repository contains a **Secure-by-Design** Hub-and-Spoke network implementa
 
 ## 🛡️ The Value Proposition: Why This Matters
 
-![Architecture Overview](assets/images/architecture.webp)
+<img src="assets/images/architecture.png" width="600" alt="Architecture Overview">
 
 Most cloud architectures suffer from the **"Security Shell" trap**: they deploy firewalls but fail to enforce them. This project demonstrates how to operationalize a true **Zero Trust** network by:
 
@@ -24,7 +24,7 @@ The architecture follows a vertical logic designed for regulatory compliance and
 
 ### 1. The Secure Hub (The Shield)
 
-![Network Flow Logic](assets/images/network-flow.webp)
+<img src="assets/images/network-flow.png" width="500" alt="Network Flow Logic">
 
 *   **Azure Firewall Premium:** Deep Packet Inspection (DPI) and IDPS for all east-west and north-south traffic.
 *   **App Gateway WAF v2:** Protecting web workloads from OWASP Top 10 vulnerabilities at the edge.
@@ -39,7 +39,7 @@ The architecture follows a vertical logic designed for regulatory compliance and
 
 ## 🧩 Core Components
 
-![Security Defense-in-Depth](assets/images/security-layers.webp)
+<img src="assets/images/security-layers.png" width="400" alt="Security Defense-in-Depth">
 
 | Component | Role | Logic |
 | :--- | :--- | :--- |
