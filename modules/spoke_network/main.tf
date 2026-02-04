@@ -46,3 +46,26 @@ resource "azurerm_subnet_network_security_group_association" "spoke" {
   subnet_id                 = azurerm_subnet.workload.id
   network_security_group_id = azurerm_network_security_group.spoke.id
 }
+
+# -------------------------------------------------------------------------
+# Routing Gap Remediation: UDR Enforcement
+# -------------------------------------------------------------------------
+resource "azurerm_route_table" "spoke" {
+  count               = var.firewall_private_ip != null ? 1 : 0
+  name                = "rt-${var.vnet_name}"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+
+  route {
+    name                   = "ForceTrafficToFirewall"
+    address_prefix         = "0.0.0.0/0"
+    next_hop_type          = "VirtualAppliance"
+    next_hop_in_ip_address = var.firewall_private_ip
+  }
+}
+
+resource "azurerm_subnet_route_table_association" "spoke" {
+  count          = var.firewall_private_ip != null ? 1 : 0
+  subnet_id      = azurerm_subnet.workload.id
+  route_table_id = azurerm_route_table.spoke[0].id
+}

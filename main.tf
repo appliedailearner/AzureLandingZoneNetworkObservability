@@ -30,6 +30,7 @@ module "spoke1" {
   resource_group_name = azurerm_resource_group.hub.name
   vnet_cidr           = "10.1.0.0/16"
   subnet_cidr         = "10.1.1.0/24"
+  firewall_private_ip = module.security.firewall_private_ip
 }
 
 module "workload_vm_spoke1" {
@@ -51,6 +52,7 @@ module "spoke2" {
   vnet_cidr                = "10.2.0.0/16"
   subnet_cidr              = "10.2.1.0/24"
   enable_webapp_delegation = true
+  firewall_private_ip      = module.security.firewall_private_ip
 }
 
 module "workload_webapp_spoke2" {
@@ -71,9 +73,6 @@ module "security" {
   firewall_subnet_id  = module.networking.firewall_subnet_id
   waf_subnet_id       = module.networking.waf_subnet_id
   law_id              = module.observability.law_id
-  unique_id           = random_id.sa.hex
-  backend_ips         = [module.workload_vm_spoke1.private_ip]
-  backend_fqdns       = [module.workload_webapp_spoke2.default_hostname]
 }
 
 # -------------------------------------------------------------------------
@@ -82,23 +81,19 @@ module "security" {
 module "observability" {
   source              = "./modules/observability"
   resource_group_name = azurerm_resource_group.hub.name
-  location            = var.location_primary
-  target_nsg_id       = module.networking.waf_nsg_id
-  source_vm_id        = module.workload_vm_spoke1.vm_id
-  unique_id           = random_id.sa.hex
+  location            = azurerm_resource_group.hub.location
+  target_nsg_id       = module.networking.waf_nsg_id    # Legacy: Logs for Hub WAF
+  source_vm_id        = module.workload_vm_spoke1.vm_id # For Connection Monitor
 }
 
-/*
-# -------------------------------------------------------------------------
-# VNet Flow Logs (The Modern Standard)
-# -------------------------------------------------------------------------
+# Flow Logs for Spoke 1
 resource "azurerm_network_watcher_flow_log" "spoke1" {
-  network_watcher_name = module.observability.network_watcher_name
-  resource_group_name  = azurerm_resource_group.hub.name
-  name                 = "vnet-flowlog-spoke1"
-  target_resource_id   = module.spoke1.vnet_id # Target VNet instead of NSG
-  storage_account_id   = module.observability.storage_account_id
-  enabled              = true
+  network_watcher_name      = module.observability.network_watcher_name
+  resource_group_name       = azurerm_resource_group.hub.name
+  name                      = "flowlog-spoke1"
+  network_security_group_id = module.spoke1.nsg_id
+  storage_account_id        = module.observability.storage_account_id
+  enabled                   = true
   retention_policy {
     enabled = true
     days    = 7
@@ -112,13 +107,14 @@ resource "azurerm_network_watcher_flow_log" "spoke1" {
   }
 }
 
+# Flow Logs for Spoke 2
 resource "azurerm_network_watcher_flow_log" "spoke2" {
-  network_watcher_name = module.observability.network_watcher_name
-  resource_group_name  = azurerm_resource_group.hub.name
-  name                 = "vnet-flowlog-spoke2"
-  target_resource_id   = module.spoke2.vnet_id # Target VNet instead of NSG
-  storage_account_id   = module.observability.storage_account_id
-  enabled              = true
+  network_watcher_name      = module.observability.network_watcher_name
+  resource_group_name       = azurerm_resource_group.hub.name
+  name                      = "flowlog-spoke2"
+  network_security_group_id = module.spoke2.nsg_id
+  storage_account_id        = module.observability.storage_account_id
+  enabled                   = true
   retention_policy {
     enabled = true
     days    = 7
@@ -131,7 +127,6 @@ resource "azurerm_network_watcher_flow_log" "spoke2" {
     interval_in_minutes   = 10
   }
 }
-*/
 
 # -------------------------------------------------------------------------
 # 6. HYBRID SIMULATION (On-Prem VNet)
