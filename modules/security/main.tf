@@ -190,8 +190,7 @@ resource "azurerm_monitor_diagnostic_setting" "fw" {
     category = "AzureFirewallApplicationRule"
   }
 
-  metric {
+  enabled_metric {
     category = "AllMetrics"
-    enabled  = true
   }
 }

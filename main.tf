@@ -73,6 +73,7 @@ module "security" {
   firewall_subnet_id  = module.networking.firewall_subnet_id
   waf_subnet_id       = module.networking.waf_subnet_id
   law_id              = module.observability.law_id
+  unique_id           = random_id.sa.hex
 }
 
 # -------------------------------------------------------------------------
@@ -82,18 +83,20 @@ module "observability" {
   source              = "./modules/observability"
   resource_group_name = azurerm_resource_group.hub.name
   location            = azurerm_resource_group.hub.location
-  target_nsg_id       = module.networking.waf_nsg_id    # Legacy: Logs for Hub WAF
-  source_vm_id        = module.workload_vm_spoke1.vm_id # For Connection Monitor
+  target_nsg_id       = module.networking.waf_nsg_id
+  source_vm_id        = module.workload_vm_spoke1.vm_id
+  unique_id           = random_id.sa.hex
 }
 
 # Flow Logs for Spoke 1
 resource "azurerm_network_watcher_flow_log" "spoke1" {
-  network_watcher_name      = module.observability.network_watcher_name
-  resource_group_name       = azurerm_resource_group.hub.name
-  name                      = "flowlog-spoke1"
-  network_security_group_id = module.spoke1.nsg_id
-  storage_account_id        = module.observability.storage_account_id
-  enabled                   = true
+  network_watcher_name = module.observability.network_watcher_name
+  resource_group_name  = azurerm_resource_group.hub.name
+  location             = var.location_primary
+  name                 = "flowlog-spoke1"
+  target_resource_id   = module.spoke1.nsg_id
+  storage_account_id   = module.observability.storage_account_id
+  enabled              = true
   retention_policy {
     enabled = true
     days    = 7
@@ -109,12 +112,13 @@ resource "azurerm_network_watcher_flow_log" "spoke1" {
 
 # Flow Logs for Spoke 2
 resource "azurerm_network_watcher_flow_log" "spoke2" {
-  network_watcher_name      = module.observability.network_watcher_name
-  resource_group_name       = azurerm_resource_group.hub.name
-  name                      = "flowlog-spoke2"
-  network_security_group_id = module.spoke2.nsg_id
-  storage_account_id        = module.observability.storage_account_id
-  enabled                   = true
+  network_watcher_name = module.observability.network_watcher_name
+  resource_group_name  = azurerm_resource_group.hub.name
+  location             = var.location_primary
+  name                 = "flowlog-spoke2"
+  target_resource_id   = module.spoke2.nsg_id
+  storage_account_id   = module.observability.storage_account_id
+  enabled              = true
   retention_policy {
     enabled = true
     days    = 7

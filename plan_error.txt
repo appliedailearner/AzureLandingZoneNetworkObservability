@@ -1,0 +1,21 @@
+
+[0m[1m[31mPlanning failed.[0m[1m Terraform encountered an error while generating this plan.[0m
+
+[0m[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mArgument is deprecated[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  with module.security.azurerm_monitor_diagnostic_setting.fw,
+[33m│[0m [0m  on modules\security\main.tf line 180, in resource "azurerm_monitor_diagnostic_setting" "fw":
+[33m│[0m [0m 180: resource "azurerm_monitor_diagnostic_setting" "fw" [4m{[0m[0m
+[33m│[0m [0m
+[33m│[0m [0m`metric` has been deprecated in favor of the `enabled_metric` property and
+[33m│[0m [0mwill be removed in v5.0 of the AzureRM provider
+[33m╵[0m[0m
+╷
+│ Error: unable to build authorizer for Resource Manager API: could not configure AzureCli Authorizer: the provided subscription ID "dummy" is not known by Azure CLI
+│ 
+│   with provider["registry.terraform.io/hashicorp/azurerm"],
+│   on provider.tf line 11, in provider "azurerm":
+│   11: provider "azurerm" {
+│ 
+╵
