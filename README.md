@@ -1,4 +1,4 @@
-# Azure Landing Zone: Network Security & Observability (Remastered)
+# Azure Landing Zone: Network Security & Observability
 
 ![License](https://img.shields.io/badge/Status-Senior--Architect--Grade-emerald)
 ![Azure](https://img.shields.io/badge/Cloud-Azure-blue)
