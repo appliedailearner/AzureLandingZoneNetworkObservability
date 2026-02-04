@@ -48,6 +48,20 @@ The architecture follows a vertical logic designed for regulatory compliance and
 | **Observability** | Traffic Analytics | Visualization of all flow logs; Identifying "Malicious IP" hits. |
 | **UDRs** | Routing Enforcement | The "Secure-by-Design" link that bridges the Routing Gap. |
 
+### 🔍 Observability in Action: The "Trinity" Proof
+
+Beyond architecture, this lab provides visual proof of network health and security status.
+
+#### 1. Traffic Analytics (The Global View)
+Visualization of all VNet and NSG flows, identifying potential malicious traffic and validating that East-West traffic is indeed being inspected.
+
+<img src="assets/images/traffic-analytics.png" width="800" alt="Azure Traffic Analytics Dashboard">
+
+#### 2. Connection Monitor (The Pulse)
+Continuous, 24/7 validation of critical network paths (e.g., Spoke VM to Internet, or Spoke-to-Spoke) with real-time latency and availability metrics.
+
+<img src="assets/images/connection-monitor.png" width="800" alt="Azure Connection Monitor Dashboard">
+
 ---
 
 ## 🚀 How to Use This Lab
